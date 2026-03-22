@@ -15,7 +15,7 @@ MainFrame.Parent = ScreenGui
 MainFrame.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
 MainFrame.BorderSizePixel = 0
 MainFrame.Position = UDim2.new(0.05, 0, 0.4, 0)
-MainFrame.Size = UDim2.new(0, 240, 0, 255)
+MainFrame.Size = UDim2.new(0, 240, 0, 270)
 MainFrame.Active = true
 MainFrame.Draggable = true 
 
@@ -73,12 +73,20 @@ local DelayInput = Instance.new("TextBox", GrindPage)
 DelayInput.Position = UDim2.new(0.5, 0, 0.22, 0)
 DelayInput.Size = UDim2.new(0.4, 0, 0, 25)
 DelayInput.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
-DelayInput.Text = "3.47"
+DelayInput.Text = "4"
 DelayInput.TextColor3 = Color3.fromRGB(0, 255, 0)
 DelayInput.Font = Enum.Font.Code
 
+local DefaultText = Instance.new("TextLabel", GrindPage)
+DefaultText.Position = UDim2.new(0, 0, 0.34, 0)
+DefaultText.Size = UDim2.new(1, 0, 0, 15)
+DefaultText.Text = "default 4 seconds"
+DefaultText.TextColor3 = Color3.fromRGB(150, 150, 150)
+DefaultText.TextSize = 11
+DefaultText.BackgroundTransparency = 1
+
 local SafetyTip = Instance.new("TextLabel", GrindPage)
-SafetyTip.Position = UDim2.new(0, 0, 0.35, 0)
+SafetyTip.Position = UDim2.new(0, 0, 0.42, 0)
 SafetyTip.Size = UDim2.new(1, 0, 0, 20)
 SafetyTip.Text = "2.1 - 5.0 is safest"
 SafetyTip.TextColor3 = Color3.fromRGB(200, 150, 50)
@@ -86,14 +94,14 @@ SafetyTip.TextSize = 12
 SafetyTip.BackgroundTransparency = 1
 
 local CancelButton = Instance.new("TextButton", GrindPage)
-CancelButton.Position = UDim2.new(0.1, 0, 0.48, 0)
+CancelButton.Position = UDim2.new(0.1, 0, 0.55, 0)
 CancelButton.Size = UDim2.new(0.8, 0, 0, 30)
 CancelButton.Text = "STOP GRIND"
 CancelButton.BackgroundColor3 = Color3.fromRGB(150, 0, 0)
 CancelButton.TextColor3 = Color3.fromRGB(255, 255, 255)
 
 local Status = Instance.new("TextLabel", GrindPage)
-Status.Position = UDim2.new(0, 0, 0.7, 0)
+Status.Position = UDim2.new(0, 0, 0.75, 0)
 Status.Size = UDim2.new(1, 0, 0, 25)
 Status.Text = "Status: Ready"
 Status.TextColor3 = Color3.fromRGB(200, 200, 200)
@@ -169,7 +177,7 @@ TPButton.MouseButton1Click:Connect(function()
     for i, pos in ipairs(waypoints) do
         if not running then break end
         local car = getCar()
-        local currentDelay = tonumber(DelayInput.Text) or 3.47
+        local currentDelay = tonumber(DelayInput.Text) or 4
         Status.Text = "Pt: " .. i .. "/39 | Senna"
         if car then car:PivotTo(CFrame.new(pos + Vector3.new(0, 3, 0)))
         elseif game.Players.LocalPlayer.Character then game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(pos) end
