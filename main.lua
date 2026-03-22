@@ -9,18 +9,16 @@ local RaceTabBtn = Instance.new("TextButton")
 local ContentFrame = Instance.new("Frame")
 local Watermark = Instance.new("TextLabel")
 
--- GUI Styling
 ScreenGui.Parent = game:GetService("CoreGui")
 MainFrame.Name = "Sumatra_Ultimate_V12_Senna"
 MainFrame.Parent = ScreenGui
 MainFrame.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
 MainFrame.BorderSizePixel = 0
 MainFrame.Position = UDim2.new(0.05, 0, 0.4, 0)
-MainFrame.Size = UDim2.new(0, 240, 0, 215) -- Size adjusted for watermark
+MainFrame.Size = UDim2.new(0, 240, 0, 215)
 MainFrame.Active = true
 MainFrame.Draggable = true 
 
--- Watermark Label
 Watermark.Parent = MainFrame
 Watermark.Size = UDim2.new(1, 0, 0, 20)
 Watermark.Position = UDim2.new(0, 0, 1, -22)
@@ -30,7 +28,6 @@ Watermark.TextColor3 = Color3.fromRGB(120, 120, 120)
 Watermark.TextSize = 14
 Watermark.Font = Enum.Font.Code
 
--- Tab System Header
 TabButtons.Parent = MainFrame
 TabButtons.Size = UDim2.new(1, 0, 0, 30)
 TabButtons.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
@@ -50,12 +47,9 @@ RaceTabBtn.TextColor3 = Color3.fromRGB(180, 180, 180)
 
 ContentFrame.Parent = MainFrame
 ContentFrame.Position = UDim2.new(0, 0, 0, 30)
-ContentFrame.Size = UDim2.new(1, 0, 1, -55) -- Adjusted for header and watermark
+ContentFrame.Size = UDim2.new(1, 0, 1, -55)
 ContentFrame.BackgroundTransparency = 1
 
------------------------------------------------------------
--- GRIND TAB CONTENT
------------------------------------------------------------
 local GrindPage = Instance.new("Frame", ContentFrame)
 GrindPage.Size = UDim2.new(1, 0, 1, 0)
 GrindPage.BackgroundTransparency = 1
@@ -81,9 +75,6 @@ Status.Text = "Status: Ready"
 Status.TextColor3 = Color3.fromRGB(200, 200, 200)
 Status.BackgroundTransparency = 1
 
------------------------------------------------------------
--- RACE TAB CONTENT
------------------------------------------------------------
 local RacePage = Instance.new("Frame", ContentFrame)
 RacePage.Size = UDim2.new(1, 0, 1, 0)
 RacePage.BackgroundTransparency = 1
@@ -97,9 +88,6 @@ StartRaceBtn.BackgroundColor3 = Color3.fromRGB(255, 50, 50)
 StartRaceBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
 StartRaceBtn.Font = Enum.Font.GothamBold
 
------------------------------------------------------------
--- LOGIC
------------------------------------------------------------
 local running = false
 local waypoints = {
     Vector3.new(131.22, 4.03, -415.93), Vector3.new(127.72, 4.03, -1274.61), 
